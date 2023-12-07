@@ -1,6 +1,6 @@
 FROM openjdk:8
 VOLUME /tmp
-EXPOSE 8080
+EXPOSE 9601
 ARG JAR_FILE=target/shipment-0.0.1-SNAPSHOT.jar
 ADD ${JAR_FILE} shipmentapp.jar
 ENTRYPOINT ["java","-jar","/shipmentapp.jar"]
