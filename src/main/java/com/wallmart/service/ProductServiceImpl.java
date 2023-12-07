@@ -1,15 +1,13 @@
 package com.wallmart.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.wallmart.dao.ProductRepository;
 import com.wallmart.entities.Product;
-
-import java.util.List;
-
-import org.bson.types.ObjectId;
+import com.wallmart.exception.ProductNotFoundException;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -50,12 +48,7 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findAll();
     }
     
-    public class ProductNotFoundException extends RuntimeException {
-
-        public ProductNotFoundException(String message) {
-            super(message);
-        }
-    }
+   
 }
 
 

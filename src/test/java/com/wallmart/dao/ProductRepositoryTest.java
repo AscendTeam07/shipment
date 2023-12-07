@@ -11,6 +11,7 @@ import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.wallmart.entities.Product;
+import com.wallmart.exception.ProductNotFoundException;
 
 @DataMongoTest
 @RunWith(SpringRunner.class)
@@ -22,7 +23,7 @@ public class ProductRepositoryTest {
     private ProductRepository productRepository;
 
     @Test
-    public void testFindByProductId() throws Exception {
+    public void testFindByProductId() throws ProductNotFoundException {
 
         Product product = productRepository.findByProductId(1);
         assertEquals(1, product.getProductId());    
