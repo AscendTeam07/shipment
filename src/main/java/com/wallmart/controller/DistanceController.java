@@ -29,7 +29,7 @@ public class DistanceController {
         return new ResponseEntity<>(addedDistance, HttpStatus.CREATED);
     }
 
-    @PutMapping("/setdistance/{zipcode}")
+    @PutMapping("/upddistance/{zipcode}")
     public ResponseEntity<?> updateDistance(@PathVariable("zipcode") String zipcode, @RequestBody Distance distance) {
         try {
             Distance curDistance = distanceService.updateDistance(zipcode, distance);
