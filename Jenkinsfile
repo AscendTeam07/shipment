@@ -24,7 +24,7 @@ pipeline {
             }
         }
 
-        stage('Run Build') {
+        stage('Build Validation') {
             steps {
                 script {
                     // Run tests (replace with your test command)
